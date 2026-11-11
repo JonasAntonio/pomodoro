@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b1830">
+  <title>Lofi Pomodoro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-phase="focus" data-running="false">
+  <main class="page">
+    <section class="card">
+      <p id="phase" class="phase" aria-live="polite">focus</p>
+
+      <div class="clock" role="timer" aria-label="Remaining time">
+        <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+          <circle class="ring-background" cx="100" cy="100" r="90"></circle>
+          <circle id="ring-progress" class="ring-progress" cx="100" cy="100" r="90"></circle>
+        </svg>
+        <span id="time" class="time">25:00</span>
+      </div>
+
+      <div id="cyclo" class="cyclo" role="img" aria-label="Step 1 of 8: focus">
+        <span data-type="focus"></span>
+        <span data-type="short"></span>
+        <span data-type="focus"></span>
+        <span data-type="short"></span>
+        <span data-type="focus"></span>
+        <span data-type="short"></span>
+        <span data-type="focus"></span>
+        <span data-type="long"></span>
+      </div>
+
+      <div class="controls">
+        <button id="btn-restart" class="btn btn-secondary" type="button" title="Restart (R)">Restart</button>
+        <button id="btn-start" class="btn btn-main" type="button" title="Start or pause (Space)">Start</button>
+        <button id="btn-skip" class="btn btn-secondary" type="button" title="Skip phase (S)">Skip</button>
+      </div>
+
+      <p class="tip">space starts or pauses · r restarts · s skips</p>
+    </section>
+
+    <section class="music" aria-label="Music playlist">
+      <iframe data-testid="embed-iframe" style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/3DIjw8eboATMgRN2RC6mz6?utm_source=generator&theme=0&si=b9cbbcbb4a524f5c"
+        width="100%" height="152" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
